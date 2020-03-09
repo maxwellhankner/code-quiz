@@ -1,0 +1,12 @@
+.timer {
+    padding: .5rem 1rem;
+    margin-left: auto;
+}
+.answer-button {
+    text-align: left;
+}
+
+.quiz-question-card {
+    display: none;
+}
+
