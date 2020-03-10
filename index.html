@@ -10,22 +10,25 @@
 </head>
 <body>
     <nav class="nav">
-        <a class="nav-link" href="#">View Highscores</a>
+        <a class="nav-link" href="#" id="view-highscores-link">View Highscores</a>
+        <a class="nav-link" href="#" id="take-quiz-link">Take Quiz</a>
         <div class="timer">
             <span>Time:</span>
             <span id="shown-time">75</span>
         </div>
-      </nav>
+    </nav>
 
-      <div class="container">
+    <div class="container">
+        <!-- Start card -->
         <div class="card" id="launch-screen-card">
             <div class="card-body">
-              Press 'START' to begin the coding quiz
+                <h1>Code Quiz</h1>
+                <p>Press 'START' to begin the coding quiz</p>
             </div>
             <button type="button" class="btn btn-primary" id="start-quiz-button">START</button>
         </div>
-
-        <div class="card current-question-card" id="question-0">
+        <!-- Quiz card -->
+        <div class="card current-question-card" id="question-answer-card">
             <div class="card-body">
                 <p id="current-question-title">Question:</p>
                 <div class="card-body all-answers">
@@ -42,8 +45,33 @@
                         D
                     </button>
                 </div>
+                <div id="last-answer-alert" class="alert alert-primary">
+                    CORRECT!
+                </div>
             </div>
-            
+        </div>
+        <!-- Quiz ended card -->
+        <div class="card" id="quiz-ended-card">
+            <div class="card-body">
+                <h1>Quiz Ended</h1>
+                <span>Your score is:</span>
+                <span id="user-score-shown">0</span>
+                <br>
+                <input type="name" class="form-control" id="user-name-input" placeholder="Name">
+                <button type="button" class="btn btn-primary answer-button" id="submit-quiz-button">
+                    SUBMIT
+                </button>
+            </div>
+        </div>
+        <!-- Highscores card -->
+        <div class="card" id="highscores-card">
+            <div class="card-body">
+                <h1>Highscores</h1>
+                <div class="highscore-board">
+                    <ul class="list-group" id="highscore-list">
+                    </ul>
+                </div>
+            </div>
         </div>
       </div>
       

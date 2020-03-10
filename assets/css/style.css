@@ -28,3 +28,19 @@ p {
     width: 100%;
     margin-top: 10px;
 }
+
+#last-answer-alert {
+    display: none;
+}
+
+#quiz-ended-card {
+    display: none;
+}
+
+#highscores-card {
+    display: none;
+}
+
+#take-quiz-link {
+    display: none;
+}
