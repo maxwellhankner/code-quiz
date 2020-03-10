@@ -9,6 +9,10 @@ var answerOptionTwo = $('#answer-two');
 var answerOptionThree = $('#answer-three');
 var answerOptionFour = $('#answer-four');
 
+// Create timer variable and select time element
+var time = 75;
+var shownTime = $('#shown-time')
+
 // Questions and answers bank
 var allQuestions = [['Question 1', 'this 1', 'that 1', 'the other', 'thing 1'],
 ['Question 2', 'this 2', 'that 2', 'the other', 'thing 2'],
@@ -23,17 +27,18 @@ var userAnswers = []
 startQuizButton.click(function(){
     launchScreenCard.attr("style", "display: none;");
     currentQuestionCard.attr("style", "display: flex;");
-    runQuiz();
+    runQuiz(0);
+    runTimer();
 })
 
 // Quiz session function
-function runQuiz() {
-    var i = 0;
+function runQuiz(i) {
+    
     generateQuestionCard(i);
     allAnswers.click(function(event){
-        
         if (event.target.classList.contains('btn')){
             var answerIndex = event.target.getAttribute('id');
+            console.log(answerIndex);
             userAnswers.push(answerIndex);
             if (answerIndex === correctAnswers[i]){
                 console.log('correct');
@@ -41,7 +46,9 @@ function runQuiz() {
             else {
                 console.log('incorrect');
             }
+            console.log(userAnswers);
             i += 1;
+            runQuiz(i);
         }
         
     })
@@ -56,4 +63,22 @@ function generateQuestionCard(i) {
     answerOptionTwo.text(allQuestions[i][2]);
     answerOptionThree.text(allQuestions[i][3]);
     answerOptionFour.text(allQuestions[i][4]);
+}
+
+// Timer function
+function runTimer() {
+    var countDownInterval = setInterval(function() {
+        time--;
+        shownTime.text(time);
+        
+        if(time === 0) {
+            clearInterval(countDownInterval);
+            endQuiz();
+        }
+    }, 1000);
+}
+
+// End quiz function
+function endQuiz () {
+
 }
