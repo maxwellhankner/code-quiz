@@ -18,20 +18,32 @@
       </nav>
 
       <div class="container">
-        <div class="card" id="launch-container">
+        <div class="card" id="launch-screen-card">
             <div class="card-body">
               Press 'START' to begin the coding quiz
             </div>
             <button type="button" class="btn btn-primary" id="start-quiz-button">START</button>
         </div>
-        <div class="card quiz-question-card" id="question-0">
+
+        <div class="card current-question-card" id="question-0">
             <div class="card-body">
-                Question:
+                <p id="current-question-title">Question:</p>
+                <div class="card-body all-answers">
+                    <button type="button" class="btn btn-primary answer-button" id="answer-one">
+                        A
+                    </button>
+                    <button type="button" class="btn btn-primary answer-button" id="answer-two">
+                        B
+                    </button>
+                    <button type="button" class="btn btn-primary answer-button" id="answer-three">
+                        C
+                    </button>
+                    <button type="button" class="btn btn-primary answer-button" id="answer-four">
+                        D
+                    </button>
+                </div>
             </div>
-            <button type="button" class="btn btn-primary answer-button">A)</button>
-            <button type="button" class="btn btn-primary answer-button">B)</button>
-            <button type="button" class="btn btn-primary answer-button">C)</button>
-            <button type="button" class="btn btn-primary answer-button">D)</button>
+            
         </div>
       </div>
       

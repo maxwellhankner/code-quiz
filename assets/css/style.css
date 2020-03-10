@@ -1,12 +1,30 @@
+.container {
+    max-width: 600px;
+}
+
 .timer {
     padding: .5rem 1rem;
     margin-left: auto;
 }
+
 .answer-button {
     text-align: left;
 }
 
-.quiz-question-card {
+.current-question-card {
     display: none;
 }
+/* No margin on bottom of question title p tag */
+p {
+    margin-bottom: 0;
+}
 
+.all-answers {
+    display: block;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
