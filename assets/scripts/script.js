@@ -46,15 +46,15 @@ startQuizButton.click(function(){
     launchScreenCard.attr("style", "display: none;");
     currentQuestionCard.attr("style", "display: flex;");
     runQuiz();
-    runTimer();
+    
 })
 
 // Quiz session function
 function runQuiz() {
     var i = 0;
+    runTimer();
     generateQuestionCard(i);
     allAnswers.click(function(event){
-        console.log(i);
         if (event.target.classList.contains('btn')){
             var answerIndex = event.target.getAttribute('id');
             userAnswers.push(answerIndex);
@@ -78,16 +78,15 @@ function runQuiz() {
             //     lastAnswerAlert.css("display", "none");
             // }
             if (i < allQuestions.length){
-                console.log(i);
                 generateQuestionCard(i);
             }
             else {
                 quizEnded = true;
+                allAnswers.unbind();
                 lastAnswerAlert.css("display", "none");
                 endQuiz();
             }
         }
-        
     })
 }
 
@@ -147,6 +146,7 @@ function showHighscoreCardOnly() {
 }
 viewHighscoresLink.click(function(){
     showHighscoreCardOnly();
+    quizEnded = true;
 })
 
 // Event listener for clicking take quiz link
@@ -169,6 +169,8 @@ var submitQuizButton = $('#submit-quiz-button');
 var userNameInput = $('#user-name-input');
 var userName = '';
 submitQuizButton.click(function(){
+    shownTime.text('75');
+    console.log(shownTime.text())
     userName = userNameInput.val();
     addUserToLocal();
     populateHighscoreBoard();
@@ -212,6 +214,8 @@ function renderLastRegistered() {
   // Function to reset all states
   function resetAllStates() {
     time = 75;
+    shownTime.text(time);
     quizEnded = false;
     userAnswers = [];
+    userNameInput.val('');
   }
