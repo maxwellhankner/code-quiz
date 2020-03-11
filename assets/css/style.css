@@ -1,35 +1,50 @@
+/* Main section of the page to be no wider that 600px */
 .container {
     max-width: 600px;
 }
 
+/* Timer number to mimic the spacing style of bootstrap */
 .timer {
     padding: .5rem 1rem;
     margin-left: auto;
 }
 
+/* Anwser buttons text to the left side of the button */
 .answer-button {
     text-align: left;
 }
 
-.current-question-card {
-    display: none;
-}
 /* No margin on bottom of question title p tag */
+
 p {
     margin-bottom: 0;
 }
 
+/* answer buttons section to be display block */
 .all-answers {
     display: block;
 }
 
+/* buttons to take up the full width of their container */
 .btn {
     display: block;
     width: 100%;
     margin-top: 10px;
 }
 
+/* Fixes to buttons because they are being reused and their properties were getting messed up */
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+    background-color: #007bff;
+ }
+
+/* Sections initially hidden to user */
 #last-answer-alert {
+    display: none;
+}
+
+.current-question-card {
     display: none;
 }
 
